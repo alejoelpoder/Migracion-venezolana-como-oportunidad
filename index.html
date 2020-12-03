@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/dark.js"></script>    
+    <script type="text/javascript">
+        am4core.ready(function() {
+
+        // Themes begin
+        am4core.useTheme(am4themes_dark);
+        // Themes end
+
+        // Create chart instance
+        var chart = am4core.create("chartdiv", am4charts.PieChart);
+
+        // Add and configure Series
+        var pieSeries = chart.series.push(new am4charts.PieSeries());
+        pieSeries.dataFields.value = "litres";
+        pieSeries.dataFields.category = "country";
+
+        // Let's cut a hole in our Pie chart the size of 30% the radius
+        chart.innerRadius = am4core.percent(30);
+
+        // Put a thick white border around each Slice
+        pieSeries.slices.template.stroke = am4core.color("#fff");
+        pieSeries.slices.template.strokeWidth = 2;
+        pieSeries.slices.template.strokeOpacity = 1;
+        pieSeries.slices.template
+        // change the cursor on hover to make it apparent the object can be interacted with
+        .cursorOverStyle = [
+            {
+            "property": "cursor",
+            "value": "pointer"
+            }
+        ];
+
+        pieSeries.alignLabels = false;
+        pieSeries.labels.template.bent = true;
+        pieSeries.labels.template.radius = 3;
+        pieSeries.labels.template.opacity= 0;
+
+        pieSeries.ticks.template.disabled = true;
+
+        // Create a base filter effect (as if it's not there) for the hover to return to
+        var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+        shadow.opacity = 0;
+
+        // Create hover state
+        var hoverState = pieSeries.slices.template.states.getKey("hover"); // normally we have to create the hover state, in this case it already exists
+
+        // Slightly shift the shadow and make it more prominent on hover
+        var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+        hoverShadow.opacity = 0.7;
+        hoverShadow.blur = 5;
+
+        // Add a legend
+        chart.legend = new am4charts.Legend();
+
+        chart.data = [{
+        "country": "Venezolanos con cuenta bancaria",
+        "litres": 77
+        },{
+        "country": "Venezolanos sin cuenta bancaria",
+        "litres": 23
+        }];
+
+        }); // end am4core.ready()
+    </script>
+
+
+    <title>Especial LR</title>
+</head>
+<body>
+    <header>
+        <div class="top-header">
+            <div>
+                <a class="a-header" href="https://larepublica.pe/">
+                    <p class="logo-desktop">
+                        <img src="https://cdn.glitch.com/1d2631d6-1465-47bf-9526-2bb682cb73f6%2F739e882a-80b6-44f7-b984-8785e1b0feb3_logo_blanco%20(1).png?v=1605290247076" alt="logo de especiales LR">
+                    </p>
+                    <p class="hidden">
+                        <img src="https://cdn.glitch.com/1d2631d6-1465-47bf-9526-2bb682cb73f6%2F739e882a-80b6-44f7-b984-8785e1b0feb3_logo%20(1).png?v=1605290186646" alt="logo de especiales LR">
+                    </p>
+                </a>
+                <div class="right">
+                    <span>
+                        <a id="id-btn-fb" class="btn-fb btn-Social" data-social="facebook" href="javascript:void(0)" id="id-btn-fb" rel="noopener"></a>
+                        <a id="id-btn-twt" class="btn-twt btn-Social" data-social="twitter" href="javascript:void(0)" id="id-btn-twt" rel="noopener"></a>
+                        <a id="id-btn-wsp" class="btn-wsp" href="https://api.whatsapp.com/send?text=Sus agresores las acechan en las calles y en las redes sociales mientras ellas esperan que los operadores de justicia determinen si fueron víctimas de violencia de género en línea. #PerseguidasEnLinea https://especiales.larepublica.pe/violencia-de-genero-perseguidas-en-linea-lrdata/?fbclid=IwAR1HZ7w_ZKBPwqxSFHNF7067zYv596i5pyirsJ07EdHLxRB_-PItR4W8AnU" id="id-btn-wsp" rel="noopener" target="_blank"></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-header">
+            <div class="trailer">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/mA5wOxXqoTI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="auto header-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum sodales blandit. Maecenas eu felis cursus, commodo enim a, vestibulum enim. Curabitur posuere sollicitudin justo ac vulputate. Mauris lacinia nulla mauris, sit amet sagittis metus scelerisque non. In hac habitasse platea dictumst.</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="cifras">
+                <div class="cifras-site">
+                    <div class="cifras-bloque num">
+                        <div class="auto num-text">
+                            <p>Actualmente hay</p>
+                            <!--<h3><span class="count">1 043 460</span></h3>-->
+                            <span class="counter" data-count="1043460">0</span>
+                            <p>venezolanos en Perú</p>
+                        </div>
+                    </div>
+                    <div class="cifras-bloque porcentaje">
+                        <div class="auto porcentaje-text">
+                            <div class="porcentaje-cuenta">
+                                <span class="counter" data-count="90">0</span>
+                                <span>%</span>
+                            </div>
+                            <p>de los venezolanos en Perú reciben ingresos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="auto cifras-text">
+                    <p class="texto-justpad">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum sodales blandit. Maecenas eu felis cursus, commodo enim a, vestibulum enim. Curabitur posuere sollicitudin justo ac vulputate. Mauris lacinia nulla mauris, sit amet sagittis metus scelerisque non. In hac habitasse platea dictumst.</p>
+                </div>
+            </div>
+            <div class="graf">
+                <div id="chartdiv"></div>
+                <div class="auto graf-text">
+                    <p class="texto-justpad">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum sodales blandit. Maecenas eu felis cursus, commodo enim a, vestibulum enim. Curabitur posuere sollicitudin justo ac vulputate. Mauris lacinia nulla mauris, sit amet sagittis metus scelerisque non. In hac habitasse platea dictumst.</p>
+                </div>
+            </div>
+            <section class="seccion1">
+                <div class="videoSite1">
+                    <div class="video11">
+                        <img class="imagen" src="segmento1.jpg" alt="">
+                        <div class="titSite1">
+                            <h2>Segmento 1</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit netus vel potenti facilisis fames, sociis eget odio tempor urna. Class varius natoque sem ornare ad lacus luctus ultrices sodales.</p>
+                        </div>
+                    </div>
+                    <div class="botSite1">
+                        <div class="video12">
+                            <img class="imagen" src="segmento2.jpg" alt="">
+                            <div class="titSite2">
+                                <h2>Segmento 2</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit netus vel potenti facilisis fames, sociis eget odio tempor urna.</p>
+                            </div>
+                        </div>
+                        <div class="video13">
+                            <img class="imagen" src="segmento3.jpg" alt="">
+                            <div class="titSite3">
+                                <h2>Segmento 3</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit netus vel potenti facilisis fames, sociis eget odio tempor urna.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="creditos">
+            <h1>LA REPÚBLICA</h1>
+            <div class="credito"><h3>Nombre: </h3><p>Crédito</p></div>
+            <div class="credito"><h3>Nombre: </h3><p>Crédito</p></div>
+            <div class="credito"><h3>Nombre: </h3><p>Crédito</p></div>
+            <div class="credito"><h3>Nombre: </h3><p>Crédito</p></div>
+        </div>
+    </footer>
+</body>
+<script>
+        
+    $('.video11').mouseover(function() {
+        $('.video11 img').css('-webkit-transform','scale(1.15)')
+        $('.video11 img').css('transform','scale(1.15)')
+        $('.video11 img').css('transition','all .3s ease-in-out')
+        $('.video11 img').css('-webkit-transition','all .3s ease-in-out')
+        $('.video11 img').css('filter','grayscale(70%)')
+        $('.titSite1').css('opacity','1')
+        $('.titSite1').css('transition','opacity .3s ease-in-out')
+        $('.video11').css('overflow','hidden')
+    });
+
+    $('.video11').mouseout(function() {
+        $('.video11 img').css('-webkit-transform','scale(1)')
+        $('.video11 img').css('transform','scale(1)')
+        $('.video11 img').css('filter','grayscale(0%)')
+        $('.video11').css('overflow','hidden')
+        $('.titSite1').css('opacity','0')
+    });
+
+    $('.video12').mouseover(function() {
+        $('.video12 img').css('-webkit-transform','scale(1.15)')
+        $('.video12 img').css('transform','scale(1.15)')
+        $('.video12 img').css('transition','all .3s ease-in-out')
+        $('.video12 img').css('-webkit-transition','all .3s ease-in-out')
+        $('.video12 img').css('filter','grayscale(70%)')
+        $('.titSite2').css('opacity','1')
+        $('.titSite2').css('transition','opacity .3s ease-in-out')
+        $('.video12').css('overflow','hidden')
+    });
+
+    $('.video12').mouseout(function() {
+        $('.video12 img').css('-webkit-transform','scale(1)')
+        $('.video12 img').css('transform','scale(1)')
+        $('.video12 img').css('filter','grayscale(0%)')
+        $('.video12').css('overflow','hidden')
+        $('.titSite2').css('opacity','0')
+    });
+
+    $('.video13').mouseover(function() {
+        $('.video13 img').css('-webkit-transform','scale(1.15)')
+        $('.video13 img').css('transform','scale(1.15)')
+        $('.video13 img').css('transition','all .3s ease-in-out')
+        $('.video13 img').css('-webkit-transition','all .3s ease-in-out')
+        $('.video13 img').css('filter','grayscale(70%)')
+        $('.titSite3').css('opacity','1')
+        $('.titSite3').css('transition','opacity .3s ease-in-out')
+        $('.video13').css('overflow','hidden')
+    });
+
+    $('.video13').mouseout(function() {
+        $('.video13 img').css('-webkit-transform','scale(1)')
+        $('.video13 img').css('transform','scale(1)')
+        $('.video13 img').css('filter','grayscale(0%)')
+        $('.video13').css('overflow','hidden')
+        $('.titSite3').css('opacity','0')
+    });
+
+
+
+    var st = $(window).scrollTop();
+    var b = 0;
+
+    $(window).scroll(function() {
+        if (st <= 500) {
+            if (b == 0) {
+                $('.counter').each(function() {
+                    var $this = $(this),
+                    countTo = $this.attr('data-count');
+
+                    $({ countNum: $this.text()}).animate({
+                        countNum: countTo
+                        },
+                        {
+                        duration: 3000,
+                        easing:'linear',
+                        step: function() {
+                        $this.text(Math.floor(this.countNum));
+                        },
+                        complete: function() {
+                        $this.text(this.countNum);
+                        //alert('finished');
+                        }
+                    });  
+                });
+                b = 1;
+            }else {
+
+            }
+        }else {
+
+        }
+        $('.top-header').css('position','fixed');
+        $('.top-header').css('height','70px');
+        $('.top-header').css('background-color','#0c0c0e');
+    });
+        
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+    
+</script>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"> 
+    <style>
+        body {
+            margin: 0;
+        }
+        .trailer {
+            background-color: green;
+            width: 100%;
+            height: 100vh;
+        }
+        .trailer iframe {
+            width: 100%;
+            height: 100vh;
+        }
+        .abso {
+            position: absolute;
+        }
+
+        /*Main*/
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .titSite1 h2 {
+            padding-left: 105px;
+            position: relative;
+            font-weight: normal;
+            font-size: 22.5px;
+        }
+        .titSite2 h2 {
+            text-align: center;
+            position: relative;
+            font-weight: normal;
+            font-size: 22.5px;
+        }
+        .titSite3 h2 {
+            padding-right: 105px;
+            text-align: right;
+            position: relative;
+            font-weight: normal;
+            font-size: 22.5px;
+        }
+
+        .titSite1 h2::before {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 5px;
+            background-color: red;
+            position: absolute;
+            left: 0px;
+            top: 43%;
+        }
+        .titSite1 h2::after {
+            content: "";
+            display: block;
+            width: calc(100% - 227px);
+            height: 5px;
+            background-color: red;
+            position: absolute;
+            left: 227px;
+            top: 43%;
+        }
+
+        .titSite2 h2::before {
+            content: "";
+            display: block;
+            width: calc(50% - 70px);
+            height: 5px;
+            background-color: red;
+            position: absolute;
+            left: 0px;
+            top: 43%;
+        }
+        .titSite2 h2::after {
+            content: "";
+            display: block;
+            width: calc(50% - 66px);
+            height: 5px;
+            background-color: red;
+            position: absolute;
+            left: calc(50% + 65px);
+            top: 43%;
+        }
+
+        .titSite3 h2::before {
+            content: "";
+            display: block;
+            width: calc(50% + 372px);
+            height: 5px;
+            background-color: red;
+            position: absolute;
+            right: 228px;
+            top: 43%;
+        }
+        .titSite3 h2::after {
+            content: "";
+            display: block;
+            width: 102px;
+            height: 5px;
+            background-color: red;
+            position: absolute;
+            right: 0;
+            top: 43%;
+        }
+        /*Sección 1*/
+        .videoSite {
+            display: flex;
+            justify-content: space-between;
+            height: 400px;
+        }
+        .anterior, .siguiente {
+            width: 100px;
+            height: 100px;
+            margin-top: 142px;
+            cursor: pointer;
+        }
+        .videos1 {
+            position: relative;
+            width: 800px;
+        }
+        .videos1 iframe {
+            width: 260px;
+        }
+        .anterior img, .siguiente img {
+            width: 100%;
+        }
+        .video11 {
+            background-color: green;
+        }
+        .video12 {
+            background-color: blue;
+        }
+        .video13 {
+            background-color: purple;
+        }
+        .a {
+            width: 260px;
+            height: 146px;
+            top: 250px;
+            z-index: 99;
+        }
+        .b {
+            width: 600px;
+            height: 338px;
+            left: 50%;
+            margin-left: -300px;
+            z-index: 98;
+        }
+        .b iframe {
+            width: 100%;
+            height: 100%;
+        }
+        .c {
+            width: 260px;
+            height: 146px;
+            left: 50%;
+            margin-left: 169px;
+            top: 250px;
+            z-index: 99;
+        }
+        .textSite {
+            margin-top: 30px;
+        }
+        .textSite p, h2 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 17px;
+        }
+
+        /*Seccion 2*/
+        .seccion2 {
+            margin-top: 25px;
+        }
+        .video21, .video22 {
+            width: 600px;
+            height: 338px;
+        }
+        .video21 {
+            background-color: green;
+        }
+        .video22 {
+            background-color: blue;
+        }
+
+        /*Section 3*/
+        .seccion3 {
+            margin-top: 25px;
+        }
+        .video31, .video32 {
+            width: 600px;
+            height: 338px;
+        }
+        .video31 {
+            background-color: gold;
+        }
+        .video32 {
+            background-color: purple;
+        }
+
+        .textSite2, .textSite3 {
+            margin-top: -40px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            
+            $('.siguiente').click(function() {
+                if ($('.video11').hasClass('a')) {
+                    
+                    $('.video11').removeClass('a');
+                    $('.video11').addClass('b');
+                    
+                }else if ($('.video11').hasClass('b')) {
+                    
+                    $('.video11').removeClass('b');
+                    $('.video11').addClass('c');
+                    
+                }else if ($('.video11').hasClass('c')) {
+                    
+                    $('.video11').removeClass('c');
+                    $('.video11').addClass('a');
+                    
+                }
+                if ($('.video12').hasClass('a')) {
+                    
+                    $('.video12').removeClass('a');
+                    $('.video12').addClass('b');
+                    
+                }else if ($('.video12').hasClass('b')) {
+                    
+                    $('.video12').removeClass('b');
+                    $('.video12').addClass('c');
+                    
+                }else if ($('.video11').hasClass('c')) {
+                    
+                    $('.video12').removeClass('c');
+                    $('.video12').addClass('a');
+                    
+                }if ($('.video13').hasClass('a')) {
+                    
+                    $('.video13').removeClass('a');
+                    $('.video13').addClass('b');
+                    
+                }else if ($('.video13').hasClass('b')) {
+                    
+                    $('.video13').removeClass('b');
+                    $('.video13').addClass('c');
+                    
+                }else if ($('.video13').hasClass('c')) {
+                    
+                    $('.video13').removeClass('c');
+                    $('.video13').addClass('a');
+                    
+                }
+               
+            });
+
+            $('.anterior').click(function() {
+                if ($('.video11').hasClass('a')) {
+                    
+                    $('.video11').removeClass('a');
+                    $('.video11').addClass('c');
+                    
+                }else if ($('.video11').hasClass('c')) {
+                    
+                    $('.video11').removeClass('c');
+                    $('.video11').addClass('b');
+                    
+                }else if ($('.video11').hasClass('b')) {
+                    
+                    $('.video11').removeClass('b');
+                    $('.video11').addClass('a');
+                    
+                }
+                if ($('.video12').hasClass('a')) {
+                    
+                    $('.video12').removeClass('a');
+                    $('.video12').addClass('c');
+                    
+                }else if ($('.video12').hasClass('c')) {
+                    
+                    $('.video12').removeClass('c');
+                    $('.video12').addClass('b');
+                    
+                }else if ($('.video12').hasClass('b')) {
+                    
+                    $('.video12').removeClass('b');
+                    $('.video12').addClass('a');
+                    
+                }
+                if ($('.video13').hasClass('a')) {
+                    
+                    $('.video13').removeClass('a');
+                    $('.video13').addClass('c');
+                    
+                }else if ($('.video13').hasClass('c')) {
+                    
+                    $('.video13').removeClass('c');
+                    $('.video13').addClass('b');
+                    
+                }else if ($('.video13').hasClass('b')) {
+                    
+                    $('.video13').removeClass('b');
+                    $('.video13').addClass('a');
+                    
+                }
+               
+            });
+
+        });
+    </script>
+    <title>Emprendimientos Venezolanos</title>
+</head>
+<body>
+    <header>
+        <div class="trailer">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/mA5wOxXqoTI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </header>
+    <main style="height: 300px;">
+        <div class="container">
+            <section class="seccion1">
+                <div class="titSite1">
+                    <h2>Segmento 1</h2>
+                </div>
+                <div class="videoSite">
+                    <div class="anterior"><img src="flecha-izquierda.png" alt=""></div>
+                    <div class="videos1">
+                        <div class="abso video11 a"><iframe src="https://www.youtube.com/embed/tnt2lDJgnQM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        <div class="abso video12 b"></div>
+                        <div class="abso video13 c"></div>
+                    </div>
+                    <div class="siguiente"><img src="proximo.png" alt=""></div>
+                </div>
+                <div class="textSite">
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit netus vel potenti facilisis fames, sociis eget odio tempor urna. Class varius natoque sem ornare ad lacus luctus ultrices sodales, eu ante montes sagittis posuere vivamus dignissim aenean, pellentesque vel ut sollicitudin odio imperdiet dictum nisl.</p>
+                    <p>Nascetur tempor facilisi cubilia pulvinar augue ultricies per mattis, gravida quisque ullamcorper orci sollicitudin ante eros massa dis, dictumst maecenas condimentum vitae faucibus tempus a.</p>
+                </div>
+            </section>
+            <section class="seccion2">
+                <div class="titSite2">
+                    <h2>Segmento 2</h2>
+                </div>
+                <div class="videoSite">
+                    <div class="video21"></div>
+                    <div class="video22"></div>
+                </div>
+                <div class="textSite textSite2">
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit netus vel potenti facilisis fames, sociis eget odio tempor urna. Class varius natoque sem ornare ad lacus luctus ultrices sodales, eu ante montes sagittis posuere vivamus dignissim aenean, pellentesque vel ut sollicitudin odio imperdiet dictum nisl.</p>
+                    <p>Nascetur tempor facilisi cubilia pulvinar augue ultricies per mattis, gravida quisque ullamcorper orci sollicitudin ante eros massa dis, dictumst maecenas condimentum vitae faucibus tempus a.</p>
+                </div>
+            </section>
+            <section class="seccion3">
+                <div class="titSite3">
+                    <h2>Segmento 3</h2>
+                </div>
+                <div class="videoSite">
+                    <div class="video31"></div>
+                    <div class="video32"></div>
+                </div>
+                <div class="textSite textSite3">
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit netus vel potenti facilisis fames, sociis eget odio tempor urna. Class varius natoque sem ornare ad lacus luctus ultrices sodales, eu ante montes sagittis posuere vivamus dignissim aenean, pellentesque vel ut sollicitudin odio imperdiet dictum nisl.</p>
+                    <p>Nascetur tempor facilisi cubilia pulvinar augue ultricies per mattis, gravida quisque ullamcorper orci sollicitudin ante eros massa dis, dictumst maecenas condimentum vitae faucibus tempus a.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
