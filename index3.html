@@ -152,10 +152,6 @@
             margin-left: -300px;
             z-index: 98;
         }
-        .b iframe {
-            width: 100%;
-            height: 100%;
-        }
         .c {
             width: 260px;
             height: 146px;
@@ -163,6 +159,10 @@
             margin-left: 169px;
             top: 250px;
             z-index: 99;
+        }
+        .a iframe, .b iframe, .c iframe {
+            width: 100%;
+            height: 100%;
         }
         .textSite {
             margin-top: 30px;
@@ -211,103 +211,103 @@
         $(document).ready(function() {
             
             $('.siguiente').click(function() {
-                if ($('.video11').hasClass('a')) {
+                if ($('.vid11').hasClass('a')) {
                     
-                    $('.video11').removeClass('a');
-                    $('.video11').addClass('b');
+                    $('.vid11').removeClass('a');
+                    $('.vid11').addClass('b');
                     
-                }else if ($('.video11').hasClass('b')) {
+                }else if ($('.vid11').hasClass('b')) {
                     
-                    $('.video11').removeClass('b');
-                    $('.video11').addClass('c');
+                    $('.vid11').removeClass('b');
+                    $('.vid11').addClass('c');
                     
-                }else if ($('.video11').hasClass('c')) {
+                }else if ($('.vid11').hasClass('c')) {
                     
-                    $('.video11').removeClass('c');
-                    $('.video11').addClass('a');
+                    $('.vid11').removeClass('c');
+                    $('.vid11').addClass('a');
                     
                 }
-                if ($('.video12').hasClass('a')) {
+                if ($('.vid12').hasClass('a')) {
                     
-                    $('.video12').removeClass('a');
-                    $('.video12').addClass('b');
+                    $('.vid12').removeClass('a');
+                    $('.vid12').addClass('b');
                     
-                }else if ($('.video12').hasClass('b')) {
+                }else if ($('.vid12').hasClass('b')) {
                     
-                    $('.video12').removeClass('b');
-                    $('.video12').addClass('c');
+                    $('.vid12').removeClass('b');
+                    $('.vid12').addClass('c');
                     
-                }else if ($('.video11').hasClass('c')) {
+                }else if ($('.vid11').hasClass('c')) {
                     
-                    $('.video12').removeClass('c');
-                    $('.video12').addClass('a');
+                    $('.vid12').removeClass('c');
+                    $('.vid12').addClass('a');
                     
-                }if ($('.video13').hasClass('a')) {
+                }if ($('.vid13').hasClass('a')) {
                     
-                    $('.video13').removeClass('a');
-                    $('.video13').addClass('b');
+                    $('vid13').removeClass('a');
+                    $('vid13').addClass('b');
                     
-                }else if ($('.video13').hasClass('b')) {
+                }else if ($('.vid13').hasClass('b')) {
                     
-                    $('.video13').removeClass('b');
-                    $('.video13').addClass('c');
+                    $('.vid13').removeClass('b');
+                    $('.vid13').addClass('c');
                     
-                }else if ($('.video13').hasClass('c')) {
+                }else if ($('.vid13').hasClass('c')) {
                     
-                    $('.video13').removeClass('c');
-                    $('.video13').addClass('a');
+                    $('.vid13').removeClass('c');
+                    $('.vid13').addClass('a');
                     
                 }
                
             });
 
             $('.anterior').click(function() {
-                if ($('.video11').hasClass('a')) {
+                if ($('.vid11').hasClass('a')) {
                     
-                    $('.video11').removeClass('a');
-                    $('.video11').addClass('c');
+                    $('.vid11').removeClass('a');
+                    $('.vid11').addClass('c');
                     
-                }else if ($('.video11').hasClass('c')) {
+                }else if ($('.vid11').hasClass('c')) {
                     
-                    $('.video11').removeClass('c');
-                    $('.video11').addClass('b');
+                    $('.vid11').removeClass('c');
+                    $('.vid11').addClass('b');
                     
-                }else if ($('.video11').hasClass('b')) {
+                }else if ($('.vid11').hasClass('b')) {
                     
-                    $('.video11').removeClass('b');
-                    $('.video11').addClass('a');
-                    
-                }
-                if ($('.video12').hasClass('a')) {
-                    
-                    $('.video12').removeClass('a');
-                    $('.video12').addClass('c');
-                    
-                }else if ($('.video12').hasClass('c')) {
-                    
-                    $('.video12').removeClass('c');
-                    $('.video12').addClass('b');
-                    
-                }else if ($('.video12').hasClass('b')) {
-                    
-                    $('.video12').removeClass('b');
-                    $('.video12').addClass('a');
+                    $('.vid11').removeClass('b');
+                    $('.vid11').addClass('a');
                     
                 }
-                if ($('.video13').hasClass('a')) {
+                if ($('.vid12').hasClass('a')) {
                     
-                    $('.video13').removeClass('a');
-                    $('.video13').addClass('c');
+                    $('.vid12').removeClass('a');
+                    $('.vid12').addClass('c');
                     
-                }else if ($('.video13').hasClass('c')) {
+                }else if ($('.vid12').hasClass('c')) {
                     
-                    $('.video13').removeClass('c');
-                    $('.video13').addClass('b');
+                    $('.vid12').removeClass('c');
+                    $('.vid12').addClass('b');
                     
-                }else if ($('.video13').hasClass('b')) {
+                }else if ($('.vid12').hasClass('b')) {
                     
-                    $('.video13').removeClass('b');
-                    $('.video13').addClass('a');
+                    $('.vid12').removeClass('b');
+                    $('.vid12').addClass('a');
+                    
+                }
+                if ($('.vid13').hasClass('a')) {
+                    
+                    $('.vid13').removeClass('a');
+                    $('.vid13').addClass('c');
+                    
+                }else if ($('.vid13').hasClass('c')) {
+                    
+                    $('.vid13').removeClass('c');
+                    $('.vid13').addClass('b');
+                    
+                }else if ($('.vid13').hasClass('b')) {
+                    
+                    $('.vid13').removeClass('b');
+                    $('.vid13').addClass('a');
                     
                 }
                

@@ -65,11 +65,41 @@
         chart.legend = new am4charts.Legend();
 
         chart.data = [{
-        "country": "Venezolanos con cuenta bancaria",
-        "litres": 77
+        "country": "Profesional",
+        "litres": 158146
         },{
-        "country": "Venezolanos sin cuenta bancaria",
-        "litres": 23
+        "country": "Empleado",
+        "litres": 76535
+        },{
+        "country": "Estudiante",
+        "litres": 59080
+        },{
+        "country": "Independiente",
+        "litres": 32429
+        },{
+        "country": "Comerciante",
+        "litres": 21047
+        },{
+        "country": "Técnico VRS",
+        "litres": 25130
+        },{
+        "country": "Obrero",
+        "litres": 13916
+        },{
+        "country": "Ama de casa",
+        "litres": 10803
+        },{
+        "country": "Vendedor",
+        "litres": 14615
+        },{
+        "country": "Bachiller",
+        "litres": 13493
+        },{
+        "country": "Infante",
+        "litres": 16592
+        },{
+        "country": "Otros",
+        "litres": 50056
         }];
 
         }); // end am4core.ready()
@@ -104,7 +134,12 @@
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/mA5wOxXqoTI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="auto header-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum sodales blandit. Maecenas eu felis cursus, commodo enim a, vestibulum enim. Curabitur posuere sollicitudin justo ac vulputate. Mauris lacinia nulla mauris, sit amet sagittis metus scelerisque non. In hac habitasse platea dictumst.</p>
+                <p>
+                    Perú es la segunda nación con mayor número de ciudadanos venezolanos en su territorio.
+                    Algunos sectores, políticos y hasta medios de comunicación ven al éxodo como un problema e
+                    ignoran los beneficios que puede brindar al país receptor. Muchos migrantes solo buscan la
+                    oportunidad de integrarse y subsistir poniendo de manifiesto su espíritu emprendedor.
+                </p>
             </div>
         </div>
     </header>
@@ -114,56 +149,82 @@
                 <div class="cifras-site">
                     <div class="cifras-bloque num">
                         <div class="auto num-text">
-                            <p>Actualmente hay</p>
-                            <!--<h3><span class="count">1 043 460</span></h3>-->
-                            <span class="counter" data-count="1043460">0</span>
-                            <p>venezolanos en Perú</p>
+                            <span class="counter" data-count="828669">0</span>
+                            <p>Ciudadanos venezolanos se encuentran en Perú</p>
+                            <p>Migraciones – Noviembre, 2020</p>
                         </div>
                     </div>
                     <div class="cifras-bloque porcentaje">
                         <div class="auto porcentaje-text">
                             <div class="porcentaje-cuenta">
-                                <span class="counter" data-count="90">0</span>
+                                <span class="counter" data-count="93.5">0</span>
                                 <span>%</span>
                             </div>
-                            <p>de los venezolanos en Perú reciben ingresos</p>
+                            <p>Se encuentra participando en una actividad económica en Perú</p>
+                            <p>INEI – 2018</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cifras-site">
+                    <div class="cifras-bloque num">
+                        <div class="auto num-text">
+                            <span class="counter" data-count="491842">0</span>
+                            <p>Ciudadanos venezolanos han tramitado el Permiso Temporal de Permanencia (PTP)</p>
+                            <p>Migraciones – Noviembre, 2020</p>
+                        </div>
+                    </div>
+                    <div class="cifras-bloque porcentaje">
+                        <div class="auto num-text">
+                            <span class="counter" data-count="438911">0</span>
+                            <p>Ciudadanos venezolanos cuentan con Permiso Temporal de Permanencia (PTP)</p>
+                            <p>Migraciones – Noviembre, 2020</p>
                         </div>
                     </div>
                 </div>
                 <div class="auto cifras-text">
-                    <p class="texto-justpad">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum sodales blandit. Maecenas eu felis cursus, commodo enim a, vestibulum enim. Curabitur posuere sollicitudin justo ac vulputate. Mauris lacinia nulla mauris, sit amet sagittis metus scelerisque non. In hac habitasse platea dictumst.</p>
+                    <p class="texto-justpad">El número de emprendimientos con capital venezolano en territorio peruano no está
+                        precisado; sin embargo, existen miles de personas que se inclinan por esta actividad.</p>
+                    <p class="texto-justpad">Hay quienes ejecutan una idea de negocio porque surge como una oportunidad, pero la
+                        mayoría lo realiza por necesidad al no contar con un trabajo de ingreso fijo.</p>
+                    <p class="texto-justpad">Un poco menos de la mitad de venezolanos en Perú no cuenta con un estatus migratorio que
+                        les permita optar por mejores beneficios. El acceso a financiamientos para impulsar su
+                        actividad es casi nulo para aquellos emprendedores que no cuentan con PTP, Carnet de
+                        Extarnjería o Carnet de Solicitante de Refugio.</p>
                 </div>
             </div>
             <div class="graf">
                 <div id="chartdiv"></div>
-                <div class="auto graf-text">
-                    <p class="texto-justpad">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum sodales blandit. Maecenas eu felis cursus, commodo enim a, vestibulum enim. Curabitur posuere sollicitudin justo ac vulputate. Mauris lacinia nulla mauris, sit amet sagittis metus scelerisque non. In hac habitasse platea dictumst.</p>
-                </div>
             </div>
             <section class="seccion1">
                 <div class="videoSite1">
-                    <div class="video11">
-                        <img class="imagen" src="segmento1.jpg" alt="">
-                        <div class="titSite1">
-                            <h2>Segmento 1</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit netus vel potenti facilisis fames, sociis eget odio tempor urna. Class varius natoque sem ornare ad lacus luctus ultrices sodales.</p>
+                    <a href="seccion1.html" target="_blank">
+                        <div class="video11">
+                            <img class="imagen" src="segmento1.jpg" alt="">
+                            <div class="titSite1">
+                                <h2>Historias que inspiran</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit netus vel potenti facilisis fames, sociis eget odio tempor urna. Class varius natoque sem ornare ad lacus luctus ultrices sodales.</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <div class="botSite1">
-                        <div class="video12">
-                            <img class="imagen" src="segmento2.jpg" alt="">
-                            <div class="titSite2">
-                                <h2>Segmento 2</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit netus vel potenti facilisis fames, sociis eget odio tempor urna.</p>
+                        <a class="mobsec" href="seccion2.html" target="_blank">
+                            <div class="video12">
+                                <img class="imagen" src="segmento2.jpg" alt="">
+                                <div class="titSite2">
+                                    <h2>Acompañamiento</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit netus vel potenti facilisis fames, sociis eget odio tempor urna.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="video13">
-                            <img class="imagen" src="segmento3.jpg" alt="">
-                            <div class="titSite3">
-                                <h2>Segmento 3</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit netus vel potenti facilisis fames, sociis eget odio tempor urna.</p>
+                        </a>
+                        <a href="seccion3.html" target="_blank">
+                            <div class="video13">
+                                <img class="imagen" src="segmento3.jpg" alt="">
+                                <div class="titSite3">
+                                    <h2>Desafíos a la hora de emprender</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit netus vel potenti facilisis fames, sociis eget odio tempor urna.</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </section>
